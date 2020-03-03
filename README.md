@@ -70,9 +70,8 @@ Students are able to create and join chatrooms. Students can communicate in thes
 
   
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="https://imgur.com/a/Qbnx8NK" width=600>
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/Qbnx8NK" data-context="false" ><a href="//imgur.com/a/Qbnx8NK"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+[Link to hand drawn wireframe](https://imgur.com/a/Qbnx8NK)
+
 
 
 ### [BONUS] Digital Wireframes & Mockups

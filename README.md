@@ -1,4 +1,4 @@
-Group Project - README Template
+Group Project - README 
 ===
 
 # ChatUCI
@@ -80,10 +80,26 @@ Students are able to create and join chatrooms. Students can communicate in thes
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+Chatroom
+|   Property    |      Type     | Description |
+| ------------- | ------------- | ------------|
+| roomId  | String | unique id of the chatoom |
+| creator | String | original creator of the chatroom |
+| createdAt | DateTime | date when the chatroom is created |
+| updatedAt | DateTime | date when the most recent message is sent |
+| numParticipants | Number | the number of participants in a chatroom |
+| numMessages | Number | the number of messages in a chatroom |
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+1. Chatroom Dashboard
+  - (Read/GET) View user's active chatrooms
+  - (Delete) Delete a chatroom currently participating in
+2. Join a Chatroom
+  - (Read/GET) Join an active chatroom hosted by ChatUCI
+3. Create a Chatroom
+  - (Create/POST) Create a new chatroom for others to join
+4. Participate in a Chatroom
+  - (Create/POST) Create a new message in the chatroom
+  - (Update/PUT) Update the chatroom with new messages

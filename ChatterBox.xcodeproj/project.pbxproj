@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8124D8D17EB83C1679935AAC /* Pods_ChatterBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6643229620172C15201589 /* Pods_ChatterBox.framework */; };
 		BB5933E321BB750300F7EFCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5933E221BB750300F7EFCC /* Constants.swift */; };
 		BB5933E721BB8B6A00F7EFCC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5933E621BB8B6A00F7EFCC /* ChatViewController.swift */; };
 		BB5933E921BB8BB300F7EFCC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5933E821BB8BB300F7EFCC /* ChatCell.swift */; };
@@ -30,6 +31,7 @@
 		BB6E761F21BB3EEC004F5612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB6E762121BB3EEC004F5612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C533DC6B2BA8226C5D16A1DB /* Pods-ChatterBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatterBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatterBox/Pods-ChatterBox.debug.xcconfig"; sourceTree = "<group>"; };
+		FB6643229620172C15201589 /* Pods_ChatterBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatterBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8124D8D17EB83C1679935AAC /* Pods_ChatterBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 		193D212B5AFDCBD51A5E836C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB6643229620172C15201589 /* Pods_ChatterBox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,19 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

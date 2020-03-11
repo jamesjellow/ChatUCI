@@ -16,11 +16,13 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    
-    // TODO: CREATE ARRAY FOR MESSAGES
+  @IBOutlet weak var chatNavigationBar: UINavigationBar!
+  
+  
+  // CREATE ARRAY FOR MESSAGES
     var messages: [PFObject] = []
     
-    // TODO: CREATE CHAT MESSAGE OBJECT
+    // CREATE CHAT MESSAGE OBJECT
     let chatMessage = PFObject(className: "Message")
 
     
@@ -29,6 +31,11 @@ class ChatViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+      
+      // set title of navigation bar
+      chatNavigationBar.topItem?.title = UserDefaults.standard.string(forKey:"currentCourse")!
+      
+      
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
@@ -46,7 +53,11 @@ class ChatViewController: UIViewController {
     // TODO: ADD FUNCTIONALITY TO retrieveChatMessages()
     @objc func retrieveChatMessages() {
         // RETRIEVE MESSAGES
-        let query = PFQuery(className: "UCICodepath20")
+        //let query = PFQuery(className: "UCICodepath20")
+      
+      // set chatroom to currently selected course
+      let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
+      let query = PFQuery(className: chatroom)
         query.addDescendingOrder("createdAt")
         query.includeKey("user")
         query.findObjectsInBackground{(messages, error) in
@@ -66,7 +77,10 @@ class ChatViewController: UIViewController {
     @IBAction func onSend(_ sender: Any) {
         // Send message
         if messageTextField.text!.isEmpty == false {
-            let chatMessage = PFObject(className: "UCICodepath20")
+            //let chatMessage = PFObject(className: "UCICodepath20")
+          
+          let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
+          let chatMessage = PFObject(className: chatroom)
             chatMessage["text"] = messageTextField.text!
             chatMessage["user"] = PFUser.current()
             

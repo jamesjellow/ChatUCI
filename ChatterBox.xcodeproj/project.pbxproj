@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8124D8D17EB83C1679935AAC /* Pods_ChatterBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6643229620172C15201589 /* Pods_ChatterBox.framework */; };
 		BB5933E321BB750300F7EFCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5933E221BB750300F7EFCC /* Constants.swift */; };
 		BB5933E721BB8B6A00F7EFCC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5933E621BB8B6A00F7EFCC /* ChatViewController.swift */; };
 		BB5933E921BB8BB300F7EFCC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5933E821BB8BB300F7EFCC /* ChatCell.swift */; };
@@ -15,6 +16,10 @@
 		BB6E761B21BB3EEB004F5612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6E761921BB3EEB004F5612 /* Main.storyboard */; };
 		BB6E761D21BB3EEC004F5612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB6E761C21BB3EEC004F5612 /* Assets.xcassets */; };
 		BB6E762021BB3EEC004F5612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6E761E21BB3EEC004F5612 /* LaunchScreen.storyboard */; };
+		E23DDEDA2418476F007E95F5 /* SearchCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DDED92418476F007E95F5 /* SearchCourseViewController.swift */; };
+		E23DDEDC241847DE007E95F5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DDEDB241847DE007E95F5 /* HomePageViewController.swift */; };
+		E23DDEE2241848D6007E95F5 /* HomeCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DDEE1241848D6007E95F5 /* HomeCourseCell.swift */; };
+		E23DDEE424184D4D007E95F5 /* SearchCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DDEE324184D4D007E95F5 /* SearchCourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		BB6E761F21BB3EEC004F5612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB6E762121BB3EEC004F5612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C533DC6B2BA8226C5D16A1DB /* Pods-ChatterBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatterBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatterBox/Pods-ChatterBox.debug.xcconfig"; sourceTree = "<group>"; };
+		E23DDED92418476F007E95F5 /* SearchCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseViewController.swift; sourceTree = "<group>"; };
+		E23DDEDB241847DE007E95F5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		E23DDEE1241848D6007E95F5 /* HomeCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCourseCell.swift; sourceTree = "<group>"; };
+		E23DDEE324184D4D007E95F5 /* SearchCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseCell.swift; sourceTree = "<group>"; };
+		FB6643229620172C15201589 /* Pods_ChatterBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatterBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8124D8D17EB83C1679935AAC /* Pods_ChatterBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +57,7 @@
 		193D212B5AFDCBD51A5E836C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB6643229620172C15201589 /* Pods_ChatterBox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				BB5933E821BB8BB300F7EFCC /* ChatCell.swift */,
+				E23DDEE1241848D6007E95F5 /* HomeCourseCell.swift */,
+				E23DDEE324184D4D007E95F5 /* SearchCourseCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +109,8 @@
 			children = (
 				BB6E761721BB3EEB004F5612 /* LoginViewController.swift */,
 				BB5933E621BB8B6A00F7EFCC /* ChatViewController.swift */,
+				E23DDED92418476F007E95F5 /* SearchCourseViewController.swift */,
+				E23DDEDB241847DE007E95F5 /* HomePageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,19 +242,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatterBox/Pods-ChatterBox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -248,6 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23DDEDA2418476F007E95F5 /* SearchCourseViewController.swift in Sources */,
+				E23DDEE2241848D6007E95F5 /* HomeCourseCell.swift in Sources */,
+				E23DDEDC241847DE007E95F5 /* HomePageViewController.swift in Sources */,
+				E23DDEE424184D4D007E95F5 /* SearchCourseCell.swift in Sources */,
 				BB6E761821BB3EEB004F5612 /* LoginViewController.swift in Sources */,
 				BB6E761621BB3EEB004F5612 /* AppDelegate.swift in Sources */,
 				BB5933E721BB8B6A00F7EFCC /* ChatViewController.swift in Sources */,

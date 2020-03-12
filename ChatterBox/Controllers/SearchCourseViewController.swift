@@ -12,7 +12,7 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
   @IBOutlet weak var searchTableView: UITableView!
 
   
-  let courses = ["ICS 51", "ICS 45C", "STATS 111", "CodePath - iOS", "ICS 6D", "Philosophy 1", "CS 161", "STATS 120A", "STATS 120B", "STATS 120C"]
+  let courses = ["ICS 51", "ICS 45C", "STATS 111", "CodePath iOS", "ICS 6D", "Philosophy 1", "CS 161", "STATS 120A", "STATS 120B", "STATS 120C"]
   
   var coursesArray = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
 
@@ -33,6 +33,8 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
     
     print(coursesArray)
     
+    // CURRENTLY COMMENTED OUT TO NOT CLUTTER USER DEFAULTS
+    
     // add selected courses to user defaults
     //UserDefaults.standard.set(coursesArray, forKey: "courses")
 
@@ -52,10 +54,6 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
     let selectedIndexPaths = tableView.indexPathsForSelectedRows
     let rowIsSelected = selectedIndexPaths != nil && selectedIndexPaths!.contains(indexPath)
     cell.accessoryType = rowIsSelected ? .checkmark : .none
-    // cell.accessoryView.hidden = !rowIsSelected // if using a custom image
-    
-    //print(indexPath.item)
-    
     
     return cell
   }
@@ -64,7 +62,6 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       let cell = tableView.cellForRow(at: indexPath)!
       cell.accessoryType = .checkmark
-      // cell.accessoryView.hidden = false // if using a custom image
     
           let selectedRows = searchTableView.indexPathsForSelectedRows
 
@@ -74,7 +71,6 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
       if !(coursesArray.contains(courses[i.item])) {
         print("Course Added!")
         coursesArray.append(courses[i.item])
-        //UserDefaults.standard.set(coursesArray, forKey: "courses")
       }
     }
     
@@ -84,7 +80,6 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
   func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
       let cell = tableView.cellForRow(at: indexPath)!
       cell.accessoryType = .none
-      // cell.accessoryView.hidden = true  // if using a custom image
         
     coursesArray = coursesArray.filter { $0 != courses[indexPath.item]}
     

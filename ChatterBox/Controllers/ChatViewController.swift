@@ -32,8 +32,13 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
       
+      // sync UserDefaults
+      UserDefaults.standard.synchronize()
+      
+      print("CHAT VIEW:-", UserDefaults.standard.string(forKey:"currentCourse")!)
+      
       // set title of navigation bar
-      chatNavigationBar.topItem?.title = UserDefaults.standard.string(forKey:"currentCourse")!
+      //chatNavigationBar.topItem?.title = UserDefaults.standard.string(forKey:"currentCourse")!
       
       
         
@@ -53,11 +58,17 @@ class ChatViewController: UIViewController {
     // TODO: ADD FUNCTIONALITY TO retrieveChatMessages()
     @objc func retrieveChatMessages() {
         // RETRIEVE MESSAGES
-        //let query = PFQuery(className: "UCICodepath20")
+//        let query = PFQuery(className: "UCICodepath20")
       
-      // set chatroom to currently selected course
+      // get name of chatroom
       let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
-      let query = PFQuery(className: chatroom)
+      
+      // remove spaces to make legal className for Parse
+      let legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
+      
+      let query = PFQuery(className: legalChatroom)
+      print(legalChatroom)
+      
         query.addDescendingOrder("createdAt")
         query.includeKey("user")
         query.findObjectsInBackground{(messages, error) in
@@ -77,10 +88,18 @@ class ChatViewController: UIViewController {
     @IBAction func onSend(_ sender: Any) {
         // Send message
         if messageTextField.text!.isEmpty == false {
-            //let chatMessage = PFObject(className: "UCICodepath20")
+//            let chatMessage = PFObject(className: "UCICodepath20")
           
+          // get name of chatroom
           let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
-          let chatMessage = PFObject(className: chatroom)
+          
+          // remove spaces to make legal className for Parse
+          let legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
+          
+          
+          let chatMessage = PFObject(className: legalChatroom)
+          
+          
             chatMessage["text"] = messageTextField.text!
             chatMessage["user"] = PFUser.current()
             

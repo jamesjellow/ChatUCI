@@ -11,6 +11,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
 
   @IBOutlet weak var homeTableView: UITableView!
   
+  
   // load saved user courses
   let homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
 
@@ -53,7 +54,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     // save current course so we know which chatroom to enter
     UserDefaults.standard.set(cell.homeCourseTitle.text, forKey: "currentCourse")
     
-    // enter chatroom
+    // sync UserDefaults
+    UserDefaults.standard.synchronize()
+    
+    // switch to chatRoom screen
+    performSegue(withIdentifier: "chatRoomSegue", sender: self)
+    
+    // deselect row
+    tableView.deselectRow(at: indexPath, animated: false)
     
     
   }

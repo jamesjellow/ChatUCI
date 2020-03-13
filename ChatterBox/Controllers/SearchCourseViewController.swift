@@ -36,7 +36,7 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
     // CURRENTLY COMMENTED OUT TO NOT CLUTTER USER DEFAULTS
     
     // add selected courses to user defaults
-    //UserDefaults.standard.set(coursesArray, forKey: "courses")
+    UserDefaults.standard.set(coursesArray, forKey: "courses")
 
   }
   

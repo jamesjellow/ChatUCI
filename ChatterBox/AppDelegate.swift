@@ -1,7 +1,7 @@
 //
 //  AppDelegate.swift
 //  ChatterBox
-//  Hello Troy
+//  Just Testing
 
 
 import UIKit //UIKit

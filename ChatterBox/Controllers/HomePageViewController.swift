@@ -13,11 +13,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
 //  let myRefreshControl = UIRefreshControl()
   
   // load saved user courses
-  let homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
+  var homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
 
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
 
     
     homeTableView.delegate = self
@@ -29,6 +29,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
+
 //        print("hello")
         homeTableView.reloadData()
         print(homeCourses)

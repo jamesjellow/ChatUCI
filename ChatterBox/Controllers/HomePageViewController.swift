@@ -10,24 +10,31 @@ import UIKit
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var homeTableView: UITableView!
-  
+//  let myRefreshControl = UIRefreshControl()
   
   // load saved user courses
-  let homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
+  var homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
 
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
 
     
     homeTableView.delegate = self
     homeTableView.dataSource = self
     
-    homeTableView.reloadData()
+//    homeTableView.reloadData()
 
 }
   
-  
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
+
+//        print("hello")
+        homeTableView.reloadData()
+        print(homeCourses)
+    }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return homeCourses.count

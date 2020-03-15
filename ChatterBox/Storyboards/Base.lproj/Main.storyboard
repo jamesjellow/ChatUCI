@@ -63,7 +63,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ChatUCI_Original" translatesAutoresizingMaskIntoConstraints="NO" id="5Fg-C3-kkK">
-                                <rect key="frame" x="87.5" y="50" width="200" height="125"/>
+                                <rect key="frame" x="-12.5" y="50" width="400" height="125"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6r-ae-emN">
                                 <rect key="frame" x="169" y="593" width="35" height="15"/>
@@ -219,6 +219,9 @@
                                 <rect key="frame" x="0.0" y="44" width="275" height="44"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1k7-Ky-nzU" id="O9L-GT-Ydn"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CSz-zR-Pie">
                                 <rect key="frame" x="0.0" y="88" width="375" height="559"/>
@@ -246,6 +249,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1k7-Ky-nzU" id="osb-uz-c7h"/>
+                                    <outlet property="delegate" destination="1k7-Ky-nzU" id="cmi-KL-fOv"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ot-WG-7FR">
                                 <rect key="frame" x="275" y="47" width="97" height="38"/>
@@ -277,6 +284,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3dc-SC-G7j"/>
                     <connections>
+                        <outlet property="searchBar" destination="hIb-90-2cZ" id="RRz-fu-EV5"/>
                         <outlet property="searchTableView" destination="CSz-zR-Pie" id="E30-9f-0bw"/>
                     </connections>
                 </viewController>

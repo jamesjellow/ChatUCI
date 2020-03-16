@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Parse
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var homeTableView: UITableView!
@@ -79,6 +79,17 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     // nothing is needed here
     // user will enter chatroom immediately after pressing tableCell
   }
-  
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        print("Logged Out!")
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = loginViewController
+//        performSegue(withIdentifier: "Authenticated", sender: self)
+        
+    }
+    
   
 }

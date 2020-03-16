@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -119,6 +119,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jcP-HN-Iko"/>
                     <connections>
                         <outlet property="passwordTextField" destination="XVX-QP-WIS" id="hF6-gJ-Kyi"/>
                         <outlet property="usernameTextField" destination="h36-y8-eSo" id="8KQ-bT-XrB"/>
@@ -192,6 +193,11 @@
                         <viewLayoutGuide key="safeArea" id="AJC-dC-NR6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Courses" id="PMq-MC-nG7">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="80v-4m-TCZ">
+                            <connections>
+                                <action selector="onLogout:" destination="wlX-zT-gf0" id="BTf-ww-qFQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="Inb-oS-hpj">
                             <connections>
                                 <segue destination="1k7-Ky-nzU" kind="show" id="kaU-uP-g5Y"/>

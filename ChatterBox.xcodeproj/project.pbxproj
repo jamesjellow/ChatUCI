@@ -416,15 +416,17 @@
 			baseConfigurationReference = C533DC6B2BA8226C5D16A1DB /* Pods-ChatterBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9VVT5BZ4Y5;
+				DEVELOPMENT_TEAM = PFJNDWK4M3;
 				INFOPLIST_FILE = "$(SRCROOT)/ChatterBox/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memo.ChatterBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memo.ChatUCI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -436,13 +438,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9VVT5BZ4Y5;
+				DEVELOPMENT_TEAM = PFJNDWK4M3;
 				INFOPLIST_FILE = "$(SRCROOT)/ChatterBox/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memo.ChatterBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memo.ChatUCI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

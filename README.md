@@ -28,13 +28,13 @@ Students are able to create and join chatrooms. Students can communicate in thes
 
 **Required Must-have Stories**
 
-- [] User stays logged in across restarts. 
-- [] User can sign up.
-- [] User can log in. 
+- [x] User stays logged in across restarts. 
+- [x] User can sign up.
+- [x] User can log in. 
 - [] User can log out. 
-- [] User can join a chat room.
+- [x] User can join a chat room.
 - [] User can create a chat room.
-- [] User can talk in a chat room.
+- [x] User can talk in a chat room.
 
 
 * ...

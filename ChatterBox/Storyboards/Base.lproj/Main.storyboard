@@ -158,9 +158,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-ot-8S0">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.80527549982070923" green="0.93222767114639282" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatUCI_Original" id="Zcb-C0-LrP">
+                                    <rect key="frame" x="0.0" y="149" width="375" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCourseCell" rowHeight="93" id="Ahi-y1-VhQ" customClass="HomeCourseCell" customModule="ChatterBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="93"/>
@@ -178,10 +182,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Messagebubble" translatesAutoresizingMaskIntoConstraints="NO" id="vfm-sP-djJ">
+                                                    <rect key="frame" x="328" y="29" width="32" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="hI4-fC-IKH"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="vfm-sP-djJ" firstAttribute="trailing" secondItem="HBw-CS-Tdi" secondAttribute="trailingMargin" id="77Q-cA-ngV"/>
                                                 <constraint firstItem="g9A-kP-lR9" firstAttribute="top" secondItem="HBw-CS-Tdi" secondAttribute="topMargin" id="DeR-Mh-OLP"/>
                                                 <constraint firstItem="g9A-kP-lR9" firstAttribute="leading" secondItem="HBw-CS-Tdi" secondAttribute="leadingMargin" id="Lhp-hZ-yYJ"/>
+                                                <constraint firstItem="vfm-sP-djJ" firstAttribute="centerY" secondItem="g9A-kP-lR9" secondAttribute="centerY" id="jO7-nR-HZe"/>
+                                                <constraint firstItem="vfm-sP-djJ" firstAttribute="top" secondItem="HBw-CS-Tdi" secondAttribute="topMargin" constant="18" id="xYh-3A-tF3"/>
                                                 <constraint firstItem="g9A-kP-lR9" firstAttribute="bottom" secondItem="HBw-CS-Tdi" secondAttribute="bottomMargin" id="zZO-G0-jCh"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -191,6 +204,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="University of California, Irvine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycz-7P-rVL">
+                                <rect key="frame" x="0.0" y="65" width="375" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.47230023145675659" green="0.77638339996337891" blue="1" alpha="0.30145012842465752" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AJC-dC-NR6"/>
@@ -224,9 +245,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="search course" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-90-2cZ">
-                                <rect key="frame" x="0.0" y="44" width="275" height="44"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" placeholder="Search Courses" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-90-2cZ">
+                                <rect key="frame" x="0.0" y="44" width="284" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="1k7-Ky-nzU" id="O9L-GT-Ydn"/>
@@ -234,7 +255,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CSz-zR-Pie">
                                 <rect key="frame" x="0.0" y="88" width="375" height="559"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCourseCell" rowHeight="57" id="c3B-KZ-enL" customClass="SearchCourseCell" customModule="ChatterBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
@@ -246,12 +267,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STATS 111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrN-3B-NEI">
                                                     <rect key="frame" x="15" y="16" width="352" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                                    <color key="textColor" red="0.42384098180000002" green="0.67282688820000003" blue="0.94146476879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.47230023145675659" green="0.77638339996337891" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="searchCourseTitle" destination="IrN-3B-NEI" id="uPq-yr-tNi"/>
@@ -264,17 +285,17 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ot-WG-7FR">
-                                <rect key="frame" x="275" y="47" width="97" height="38"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <rect key="frame" x="284" y="47" width="88" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Courses">
-                                    <color key="titleColor" red="0.42384098180000002" green="0.67282688820000003" blue="0.94146476879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.47230023145675659" green="0.77638339996337891" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="addSelectedCourses:" destination="1k7-Ky-nzU" eventType="touchUpInside" id="KnW-5T-f6R"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hIb-90-2cZ" firstAttribute="top" secondItem="0dE-Ml-2mp" secondAttribute="top" id="1D7-ZJ-7Xp"/>
                             <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="0dE-Ml-2mp" secondAttribute="top" constant="44" id="7Px-1A-5gJ"/>
@@ -364,7 +385,7 @@
                                             <constraint firstAttribute="height" constant="30" id="Z4N-WN-kuT"/>
                                         </constraints>
                                         <state key="normal" title="Send">
-                                            <color key="titleColor" red="0.99215686270000003" green="0.6705882353" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.36541628837585449" green="0.78036201000213623" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="onSend:" destination="qi6-3n-d4k" eventType="touchUpInside" id="wGA-l8-07Q"/>
@@ -401,6 +422,7 @@
     </scenes>
     <resources>
         <image name="ChatUCI_Original" width="200" height="200"/>
+        <image name="Messagebubble" width="50" height="50"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
 </document>

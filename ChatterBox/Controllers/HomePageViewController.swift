@@ -10,7 +10,7 @@ import Parse
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var homeTableView: UITableView!
-//  let myRefreshControl = UIRefreshControl()
+    //  let myRefreshControl = UIRefreshControl()
   
   // load saved user courses
   var homeCourses = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []

@@ -16,13 +16,41 @@ class LoginViewController: UIViewController {
     /*------ Outlets ------*/
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var backgroundGradientView: UIView!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [#colorLiteral(red: 0.95, green: 0.98, blue: 1, alpha: 1).cgColor, UIColor(red: 219/255, green: 245/255, blue: 255/255, alpha: 1).cgColor]
+        
+        backgroundGradientView.layer.addSublayer(gradientLayer)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        // Sign Up Button Shadow
+        signUpButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        signUpButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        signUpButton.layer.shadowOpacity = 1.0
+        signUpButton.layer.shadowRadius = 0.0
+        signUpButton.layer.masksToBounds = false
+        signUpButton.layer.cornerRadius = 4.0
+        
+        // Log In Button Shadow
+        logInButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        logInButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        logInButton.layer.shadowOpacity = 1.0
+        logInButton.layer.shadowRadius = 0.0
+        logInButton.layer.masksToBounds = false
+        logInButton.layer.cornerRadius = 4.0
     }
-
-
+    
+    override var shouldAutorotate: Bool{
+        return false
+    }
     
     /*------ SIGN UP AND LOG IN FUNCTIONALITY  ------*/
     

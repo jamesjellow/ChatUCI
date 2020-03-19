@@ -79,7 +79,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMm-LF-m16">
                                 <rect key="frame" x="55" y="313" width="263" height="34"/>
-                                <color key="backgroundColor" red="0.42384098181645846" green="0.6728268881830205" blue="0.94146476875101859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.53923508800728104" green="0.77163113864041621" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,7 +121,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="jcP-HN-Iko"/>
                     <connections>
+                        <outlet property="backgroundGradientView" destination="8bC-Xf-vdC" id="VOf-uX-5uh"/>
+                        <outlet property="logInButton" destination="SMm-LF-m16" id="8kM-13-0Q6"/>
                         <outlet property="passwordTextField" destination="XVX-QP-WIS" id="hF6-gJ-Kyi"/>
+                        <outlet property="signUpButton" destination="J4Q-8k-u2R" id="acM-eM-Nmg"/>
                         <outlet property="usernameTextField" destination="h36-y8-eSo" id="8KQ-bT-XrB"/>
                         <segue destination="4bi-Zw-VGb" kind="presentation" identifier="Authenticated" modalPresentationStyle="fullScreen" id="Lcb-zv-GkI"/>
                     </connections>

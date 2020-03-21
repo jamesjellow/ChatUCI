@@ -15,9 +15,11 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
   let courses = ["ICS 51", "ICS 53", "ICS 45C", "STATS 111", "CodePath iOS", "ICS 6D", "Philosophy 1", "CS 161", "STATS 120A", "STATS 120B", "STATS 120C"]
   
   var coursesArray = UserDefaults.standard.array(forKey: "courses") as? [String] ?? []
+  
     
     var searchClass = [String]()
     var searching = false
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,8 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
       searchTableView.delegate = self
       searchTableView.dataSource = self
       
-
+      // set searchBar text color to black
+      searchBar.searchTextField.textColor = .black
       
       searchTableView.reloadData()
       
@@ -42,11 +45,14 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
     // add selected courses to user defaults
     UserDefaults.standard.set(coursesArray, forKey: "courses")
     
+    print(coursesArray.count)
     
     if (coursesArray.count > 0) {
       // code
       showAlert(self)
     }
+    
+    searchTableView.reloadData()
   }
   
 

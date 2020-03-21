@@ -44,6 +44,9 @@ class ChatViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
+      
+      // rotate tableView 180 degrees so that it loads cells from bottom -> top
+      tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         
         
         // Reload messages every second (interval of 1 second)
@@ -169,7 +172,10 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 //        cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
 //        cell.avatarImage.clipsToBounds = true
     
-
+      
+      // rotate cell 180 degrees so that it isnt upside down after rotating the tableView
+      cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
+      
         return cell
     }
     

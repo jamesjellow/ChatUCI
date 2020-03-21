@@ -90,6 +90,30 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
 //        performSegue(withIdentifier: "Authenticated", sender: self)
         
     }
+  
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+   if editingStyle == .delete {
+    
+    print(homeCourses)
+
+    
+    // remove course from homeCourses
+    homeCourses.remove(at: indexPath.row)
+    
+    // update tableView
+    tableView.deleteRows(at: [indexPath], with: .fade)
+    
+    // update userDefaults courses
+    UserDefaults.standard.set(homeCourses, forKey: "courses")
+    
+    // sync UserDefaults
+    UserDefaults.standard.synchronize()
+    
+    print(homeCourses)
+    
+   }
+  }
     
   
 }

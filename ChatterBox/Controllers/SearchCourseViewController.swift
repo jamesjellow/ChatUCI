@@ -41,9 +41,12 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
       
       searchTableView.delegate = self
       searchTableView.dataSource = self
+        
+        searchTableView.keyboardDismissMode = .interactive
       
       deptTextField.inputView = deptPicker
       deptPicker.delegate = self
+        
       
       // set searchBar text color to black
       searchBar.searchTextField.textColor = .black
@@ -331,6 +334,8 @@ class SearchCourseViewController: UIViewController, UITableViewDataSource, UITab
      searchTableView.reloadData()
      self.view.endEditing(true)
   }
+    
+    
   
 }
 

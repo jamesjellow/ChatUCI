@@ -7,6 +7,7 @@ target 'ChatterBox' do
   pod 'Parse'
   pod 'Alamofire'
   pod 'SwiftSoup'
+  pod 'MessageInputBar'
 
   # Pods for ChatterBox
 

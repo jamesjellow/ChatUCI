@@ -178,7 +178,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="293" id="M70-76-Jar"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -246,14 +246,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" placeholder="Search Courses" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-90-2cZ">
-                                <rect key="frame" x="0.0" y="44" width="284" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="283" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="1k7-Ky-nzU" id="O9L-GT-Ydn"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CSz-zR-Pie">
-                                <rect key="frame" x="0.0" y="88" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchCourseCell" rowHeight="57" id="c3B-KZ-enL" customClass="SearchCourseCell" customModule="ChatterBox" customModuleProvider="target">
@@ -263,15 +263,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STATS 111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrN-3B-NEI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="STATS 111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrN-3B-NEI">
                                                     <rect key="frame" x="15" y="16" width="352" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" red="0.47230023145675659" green="0.77638339996337891" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IrN-3B-NEI" secondAttribute="trailing" constant="-7" id="8b9-m2-x5c"/>
+                                                <constraint firstItem="IrN-3B-NEI" firstAttribute="leading" secondItem="AeQ-4A-MkA" secondAttribute="leadingMargin" id="K56-WT-7u9"/>
+                                                <constraint firstItem="IrN-3B-NEI" firstAttribute="centerY" secondItem="AeQ-4A-MkA" secondAttribute="centerY" id="NOJ-k2-CIc"/>
+                                                <constraint firstItem="IrN-3B-NEI" firstAttribute="top" secondItem="AeQ-4A-MkA" secondAttribute="topMargin" constant="5" id="hyB-kq-P4W"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="tintColor" red="0.42384098180000002" green="0.67282688820000003" blue="0.94146476879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -284,8 +289,8 @@
                                     <outlet property="delegate" destination="1k7-Ky-nzU" id="cmi-KL-fOv"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ot-WG-7FR">
-                                <rect key="frame" x="284" y="47" width="88" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ot-WG-7FR">
+                                <rect key="frame" x="283" y="47" width="89" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Courses">
                                     <color key="titleColor" red="0.47230023145675659" green="0.77638339996337891" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -294,19 +299,49 @@
                                     <action selector="addSelectedCourses:" destination="1k7-Ky-nzU" eventType="touchUpInside" id="KnW-5T-f6R"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-re-Uio">
+                                <rect key="frame" x="16" y="96" width="102" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Rr-k3-y06">
+                                <rect key="frame" x="131" y="90" width="144" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAc-uq-Ec0">
+                                <rect key="frame" x="283" y="88" width="89" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.4723002315" green="0.77638339999999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="1k7-Ky-nzU" eventType="touchUpInside" id="gAd-RX-tJz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hIb-90-2cZ" firstAttribute="top" secondItem="0dE-Ml-2mp" secondAttribute="top" id="1D7-ZJ-7Xp"/>
-                            <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="0dE-Ml-2mp" secondAttribute="top" constant="44" id="7Px-1A-5gJ"/>
-                            <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="hIb-90-2cZ" secondAttribute="bottom" id="Ip4-dW-dVB"/>
+                            <constraint firstItem="jAc-uq-Ec0" firstAttribute="centerX" secondItem="6ot-WG-7FR" secondAttribute="centerX" id="4F5-27-UGy"/>
+                            <constraint firstItem="4Rr-k3-y06" firstAttribute="leading" secondItem="hf8-re-Uio" secondAttribute="trailing" constant="13" id="4lA-Gl-sfi"/>
+                            <constraint firstItem="hf8-re-Uio" firstAttribute="centerY" secondItem="4Rr-k3-y06" secondAttribute="centerY" id="7Nv-um-xMM"/>
+                            <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="0dE-Ml-2mp" secondAttribute="top" constant="88" id="7Px-1A-5gJ"/>
+                            <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="hIb-90-2cZ" secondAttribute="bottom" constant="44" id="Ip4-dW-dVB"/>
                             <constraint firstItem="CSz-zR-Pie" firstAttribute="trailing" secondItem="0dE-Ml-2mp" secondAttribute="trailing" id="JAx-Rb-aqS"/>
                             <constraint firstItem="6ot-WG-7FR" firstAttribute="top" secondItem="0dE-Ml-2mp" secondAttribute="top" constant="3" id="Jzh-oH-gBM"/>
-                            <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="6ot-WG-7FR" secondAttribute="bottom" constant="3" id="XjJ-1p-LWT"/>
+                            <constraint firstItem="0dE-Ml-2mp" firstAttribute="trailing" secondItem="4Rr-k3-y06" secondAttribute="trailing" constant="100" id="Ofi-aB-guI"/>
+                            <constraint firstItem="hf8-re-Uio" firstAttribute="leading" secondItem="cv5-2y-m9y" secondAttribute="leadingMargin" id="TUu-Iu-Urk"/>
+                            <constraint firstItem="CSz-zR-Pie" firstAttribute="top" secondItem="6ot-WG-7FR" secondAttribute="bottom" constant="47" id="XjJ-1p-LWT"/>
+                            <constraint firstItem="hf8-re-Uio" firstAttribute="top" secondItem="hIb-90-2cZ" secondAttribute="bottom" constant="8" id="bHy-lE-niu"/>
+                            <constraint firstItem="4Rr-k3-y06" firstAttribute="top" secondItem="hIb-90-2cZ" secondAttribute="bottom" constant="2" id="bQV-Iw-KAe"/>
                             <constraint firstItem="0dE-Ml-2mp" firstAttribute="bottom" secondItem="CSz-zR-Pie" secondAttribute="bottom" constant="20" id="eNN-5t-CUU"/>
                             <constraint firstItem="0dE-Ml-2mp" firstAttribute="trailing" secondItem="6ot-WG-7FR" secondAttribute="trailing" constant="3" id="kJh-Ui-xAw"/>
                             <constraint firstItem="hIb-90-2cZ" firstAttribute="leading" secondItem="0dE-Ml-2mp" secondAttribute="leading" id="lJJ-Fe-5g9"/>
                             <constraint firstItem="6ot-WG-7FR" firstAttribute="leading" secondItem="hIb-90-2cZ" secondAttribute="trailing" id="ooi-g5-HxI"/>
+                            <constraint firstItem="jAc-uq-Ec0" firstAttribute="trailing" secondItem="6ot-WG-7FR" secondAttribute="trailing" id="t7A-SD-lRW"/>
+                            <constraint firstItem="jAc-uq-Ec0" firstAttribute="leading" secondItem="4Rr-k3-y06" secondAttribute="trailing" constant="8" id="txH-IQ-TyX"/>
+                            <constraint firstItem="jAc-uq-Ec0" firstAttribute="bottom" secondItem="hf8-re-Uio" secondAttribute="bottom" id="xJx-TP-zzJ"/>
                             <constraint firstItem="CSz-zR-Pie" firstAttribute="leading" secondItem="0dE-Ml-2mp" secondAttribute="leading" id="yBc-rb-AiY"/>
                             <constraint firstItem="6ot-WG-7FR" firstAttribute="leading" secondItem="hIb-90-2cZ" secondAttribute="trailing" symbolic="YES" id="zEc-gI-moU"/>
                         </constraints>
@@ -314,6 +349,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3dc-SC-G7j"/>
                     <connections>
+                        <outlet property="deptTextField" destination="4Rr-k3-y06" id="PQD-FC-6Jn"/>
                         <outlet property="searchBar" destination="hIb-90-2cZ" id="RRz-fu-EV5"/>
                         <outlet property="searchTableView" destination="CSz-zR-Pie" id="E30-9f-0bw"/>
                     </connections>

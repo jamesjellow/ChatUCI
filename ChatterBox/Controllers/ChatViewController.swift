@@ -67,7 +67,12 @@ class ChatViewController: UIViewController {
       let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
       
       // remove spaces to make legal className for Parse
-      let legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
+      var legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
+      
+      // remove special characters
+      let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+      legalChatroom = String(legalChatroom.filter { chars.contains($0) })
+
       
       let query = PFQuery(className: legalChatroom)
       print(legalChatroom)
@@ -97,8 +102,13 @@ class ChatViewController: UIViewController {
           let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
           
           // remove spaces to make legal className for Parse
-          let legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
+          var legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
           
+          // remove special characters
+          let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+          legalChatroom = String(legalChatroom.filter { chars.contains($0) })
+          
+          print("Legal Chatroom", legalChatroom)
           
           let chatMessage = PFObject(className: legalChatroom)
           

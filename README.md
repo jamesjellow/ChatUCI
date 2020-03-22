@@ -31,17 +31,18 @@ Students are able to create and join chatrooms. Students can communicate in thes
 - [x] User stays logged in across restarts. 
 - [x] User can sign up.
 - [x] User can log in. 
-- [] User can log out. 
+- [x] User can log out. 
 - [x] User can join a chat room.
-- [] User can create a chat room.
 - [x] User can talk in a chat room.
-
-
-* ...
 
 **Optional Nice-to-have Stories**
 
-- [] User can filter (alphabetic, most recent, most popular).
+- [x] Pull data directly from UCI schedule of courses using Alamofire and SwiftSoup
+- [x] User can search for a chat room
+- [x] User can remove chatroom
+- [x] User can filter by department when searching for course
+- [x] Load messages from button-up in chatroom
+- [x] Display pop-up when user adds courses
 - [] User can send media (images).
 
 ### 2. Screen Archetypes
@@ -63,8 +64,7 @@ Students are able to create and join chatrooms. Students can communicate in thes
 **Flow Navigation** (Screen to Screen)
 
 * [Home Screen]
-   * [Join a room]
-   * [Create a room]
+   * [Search for a room]
    * [Talk in a room]
 
 

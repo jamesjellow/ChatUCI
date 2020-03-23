@@ -81,10 +81,6 @@ Here's a walkthrough of implemented user stories:
 ### [BONUS] Digital Wireframes & Mockups
 <img src="http://g.recordit.co/oLgfYQBhqa.gif" width=600>
 
-### [BONUS] Interactive Prototype
-
-## Schema 
-
 ### Models
 Chatroom
 |   Property    |      Type     | Description |

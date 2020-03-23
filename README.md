@@ -13,6 +13,10 @@ Group Project - README
 ### Description
 Students are able to create and join chatrooms. Students can communicate in these chatrooms and talk amongst themselves about courses, life, etc.
 
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/NXpw0Xpefh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:**

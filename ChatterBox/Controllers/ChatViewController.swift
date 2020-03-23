@@ -8,17 +8,19 @@
 
 import UIKit
 import Parse
+import MessageInputBar
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, MessageInputBarDelegate {
 
     
     /*------ Outlets + Variables ------*/
-    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-  @IBOutlet weak var chatNavigationBar: UINavigationBar!
+    @IBOutlet weak var chatNavigationBar: UINavigationBar!
   
-  
+    let messageBar = MessageInputBar()
+    var showMessageBar = true
+    
   // CREATE ARRAY FOR MESSAGES
     var messages: [PFObject] = []
     
@@ -29,8 +31,10 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        messageBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.keyboardDismissMode = .interactive
       
       // sync UserDefaults
       UserDefaults.standard.synchronize()
@@ -54,6 +58,13 @@ class ChatViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override var inputAccessoryView: UIView?{
+        return messageBar
+    }
+    
+    override var canBecomeFirstResponder: Bool{
+        return showMessageBar
+    }
     
     
     /*------  Message Functionality ------*/
@@ -91,42 +102,6 @@ class ChatViewController: UIViewController {
         
     }
     
-    
-    // TODO: SEND MESSAGE TO SERVER AFTER onSend IS CLICKED
-    @IBAction func onSend(_ sender: Any) {
-        // Send message
-        if messageTextField.text!.isEmpty == false {
-//            let chatMessage = PFObject(className: "UCICodepath20")
-          
-          // get name of chatroom
-          let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
-          
-          // remove spaces to make legal className for Parse
-          var legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
-          
-          // remove special characters
-          let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
-          legalChatroom = String(legalChatroom.filter { chars.contains($0) })
-          
-          print("Legal Chatroom", legalChatroom)
-          
-          let chatMessage = PFObject(className: legalChatroom)
-          
-          
-            chatMessage["text"] = messageTextField.text!
-            chatMessage["user"] = PFUser.current()
-            
-            
-            chatMessage.saveInBackground{ (sucess, error) in
-                if error != nil {
-                    print("Message could not be sent")
-                }else{
-                    self.messageTextField.text = ""
-                }
-            }
-        }
-        
-    }
     
     /*------ Dismiss Keyboard and Logout ------*/
     
@@ -187,6 +162,41 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
       cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
       
         return cell
+    }
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        // get name of chatroom
+        let chatroom = UserDefaults.standard.string(forKey: "currentCourse")!
+        
+        // remove spaces to make legal className for Parse
+        var legalChatroom = chatroom.replacingOccurrences(of: " ", with: "")
+        
+        // remove special characters
+        let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+        legalChatroom = String(legalChatroom.filter { chars.contains($0) })
+        
+        print("Legal Chatroom", legalChatroom)
+        
+        let chatMessage = PFObject(className: legalChatroom)
+        
+        
+        chatMessage["text"] = text
+        chatMessage["user"] = PFUser.current()
+        
+        chatMessage.saveInBackground{ (sucess, error) in
+            if error != nil {
+                print("Message could not be sent")
+            }else{
+                self.messageBar.inputTextView.text = nil
+            }
+        }
+        showMessageBar = false
+        becomeFirstResponder()
+        messageBar.inputTextView.resignFirstResponder()
+        
+        showMessageBar = true
+        becomeFirstResponder()
+
     }
     
     
